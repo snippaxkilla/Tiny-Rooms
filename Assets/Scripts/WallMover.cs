@@ -27,6 +27,7 @@ public class WallMover : MonoBehaviour
             foreach (GameObject wall in walls)
             {
                 Vector3 directionToOrigin = (Vector3.zero - wall.transform.position).normalized;
+                directionToOrigin.y = 0; // Ignore y-component
                 wall.transform.position += directionToOrigin * moveDistance;
             }
             currentStage++;
@@ -40,6 +41,7 @@ public class WallMover : MonoBehaviour
             foreach (GameObject wall in walls)
             {
                 Vector3 directionToOrigin = (Vector3.zero - wall.transform.position).normalized;
+                directionToOrigin.y = 0; // Ignore y-component
                 wall.transform.position -= directionToOrigin * moveDistance;
             }
             currentStage--;
